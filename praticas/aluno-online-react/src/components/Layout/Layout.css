@@ -1,0 +1,17 @@
+.layout-geral {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .corpo-projeto {
+    display: flex;
+    margin-top: 60px; 
+  }
+  
+  .conteudo-dinamico {
+    margin-left: 200px; 
+    width: 100%;
+    padding: 20px;
+    min-height: calc(100vh - 60px);
+    background-color: #ecf0f1;
+  }
