@@ -1,0 +1,32 @@
+.input-group {
+  margin-bottom: 20px; 
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd; 
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  box-sizing: border-box; 
+}
+
+.input-group input.input-error {
+  border-color: #ff4d4d; 
+}
+
+.error-message {
+  color: #ff4d4d; 
+  font-size: 0.85rem;
+  margin-top: 6px;
+  display: block;
+}
