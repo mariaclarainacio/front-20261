@@ -1,28 +1,17 @@
-import Card from './components/Cards/Card';
+import { Routes, Route } from 'react-router-dom';
+import Layout from './layouts/Layout';
+import Dashboard from './pages/Dashboard/Dashboard';
+import Notas from './pages/Notas/Notas';
 
 function App() {
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Painel do Aluno</h1>
-
-      <h2>AVISOS</h2>
-      <Card 
-        titulo="Aviso Importante" 
-        subtitulo="Postado em 13/04/2026"
-        conteudo="A aula de amanhã será remota via Teams."
-        corBorda="red"
-      />
-
-      <h2>Frontend</h2>
-      <Card 
-        titulo="Desenvolvimento Web" 
-        subtitulo="Professor: Jose Reginaldo"
-        corBorda="blue"
-      >
-        <p>Média Atual: <strong>9.5</strong></p>
-        <button>Ver Detalhes</button>
-      </Card>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="notas" element={<Notas />} />
+        <Route path="faltas" element={<div>Página de Faltas</div>} />
+      </Route>
+    </Routes>
   );
 }
 
