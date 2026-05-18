@@ -1,17 +1,20 @@
-import './Menu.css';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
-function Menu() {
+export default function Menu() {
+  const { logout } = useAuth();
+
   return (
-    <nav className="menu-lateral">
+    <nav className="sidebar-menu">
       <ul>
-        <li>Dashboard</li>
-        <li>Notas</li>
-        <li>Faltas</li>
-        <li>Boletos</li>
-        <li>Requerimentos</li>
+        <li><Link to="/">Dashboard</Link></li>
+        <li><Link to="/faltas">Faltas</Link></li>
+        <li>
+          <button onClick={logout} className="btn-logout">
+            Sair
+          </button>
+        </li>
       </ul>
     </nav>
   );
 }
-
-export default Menu;
