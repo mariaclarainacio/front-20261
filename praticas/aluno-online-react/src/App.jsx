@@ -1,29 +1,30 @@
-import Card from './components/Cards/Card';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { useAuth } from './contexts/AuthContext';
+import Login from './pages/Login/Login';
+import Dashboard from './pages/Dashboard/Dashboard';
+import Faltas from './pages/Faltas/Faltas';
 
-function App() {
+export default function App() {
+  const { autenticado } = useAuth();
+
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Painel do Aluno</h1>
-
-      <h2>AVISOS</h2>
-      <Card 
-        titulo="Aviso Importante" 
-        subtitulo="Postado em 13/04/2026"
-        conteudo="A aula de amanhã será remota via Teams."
-        corBorda="red"
-      />
-
-      <h2>Frontend</h2>
-      <Card 
-        titulo="Desenvolvimento Web" 
-        subtitulo="Professor: Jose Reginaldo"
-        corBorda="blue"
-      >
-        <p>Média Atual: <strong>9.5</strong></p>
-        <button>Ver Detalhes</button>
-      </Card>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route 
+          path="/login" 
+          element={!autenticado ? <Login /> : <Navigate to="/" />} 
+        />
+        <Route 
+          path="/" 
+          element={autenticado ? <Dashboard /> : <Navigate to="/login" />} 
+        />
+        
+        <Route 
+          path="/faltas" 
+          element={autenticado ? <Faltas /> : <Navigate to="/login" />} 
+        />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
