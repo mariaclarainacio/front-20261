@@ -1,10 +1,10 @@
 import './Header.css';
 
-function Header() {
+function Header(props) {
   return (
     <header className="header-container">
-      <div className="logo">Aluno Online</div>
-      <div className="user-info">Olá, Maria Clara</div>
+        <div className="logo">Aluno Online</div>
+        <div className="user-info">Olá, {props.nomeUsuario}</div>
     </header>
   );
 }

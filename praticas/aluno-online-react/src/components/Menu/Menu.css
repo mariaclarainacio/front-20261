@@ -1,25 +1,46 @@
-.menu-lateral {
-    width: 200px;
-    background-color: #34495e;
-    height: calc(100vh - 60px);
-    position: fixed;
-    top: 60px;
-    padding-top: 20px;
-  }
-  
-  .menu-lateral ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .menu-lateral li {
-    padding: 15px 20px;
-    color: #bdc3c7;
-    cursor: pointer;
-    border-bottom: 1px solid #2c3e50;
-  }
-  
-  .menu-lateral li:hover {
-    background-color: #1abc9c;
-    color: white;
-  }
+.menu {
+  background-color: #ffffff;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #dee2e6;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.menu a {
+  text-decoration: none;
+  color: #495057;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.menu a:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+.menu a.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.logout-btn {
+  margin-left: auto;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: #bd2130;
+}

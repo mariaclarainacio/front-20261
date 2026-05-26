@@ -1,33 +1,29 @@
-import './Notas.css';
+import Tabela from '../../components/Tabela/Tabela';
 
 function Notas() {
+  const colunas = ['Disciplina', 'A1', 'A2', 'Média', 'Situação'];
+
+  const listaNotas = [
+    {
+      disciplina: 'Análise de Sistemas',
+      a1: '8.0',
+      a2: '9.0',
+      media: '8.5',
+      situacao: 'Aprovado'
+    },
+    {
+      disciplina: 'Programação Java',
+      a1: '7.5',
+      a2: '8.5',
+      media: '8.0',
+      situacao: 'Aprovado'
+    }
+  ];
+
   return (
-    <div className="pagina-conteudo">
-      <h1>Minhas Notas</h1>
-      <table className="tabela-estilizada">
-        <thead>
-          <tr>
-            <th>Disciplina</th>
-            <th>A1</th>
-            <th>A2</th>
-            <th>Média</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Desenvolvimento Web</td>
-            <td>9.5</td>
-            <td>8.0</td>
-            <td>8.7</td>
-          </tr>
-          <tr>
-            <td>Arquitetura de Software</td>
-            <td>7.0</td>
-            <td>9.0</td>
-            <td>8.0</td>
-          </tr>
-        </tbody>
-      </table>
+    <div>
+      <h2>Minhas Notas</h2>
+      <Tabela cabecalho={colunas} dados={listaNotas} />
     </div>
   );
 }

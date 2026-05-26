@@ -1,5 +1,7 @@
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext } from "react";
+
 const AuthContext = createContext(null);
+
 export const AuthProvider = ({ children }) => {
   const [autenticado, setAutenticado] = useState(false);
   const [usuario, setUsuario] = useState(null);
@@ -24,7 +26,7 @@ export const AuthProvider = ({ children }) => {
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
-    throw new Error('useAuth deve ser usado dentro de um AuthProvider');
+    throw new Error("useAuth deve ser usado dentro de um AuthProvider");
   }
   return context;
 };
