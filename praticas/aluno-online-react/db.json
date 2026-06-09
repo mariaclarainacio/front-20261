@@ -1,3 +1,10 @@
 {
-  "requerimentos": []
+  "requerimentos": [],
+  "usuarios": [
+    {
+      "id": "1",
+      "email": "aluno@online.com",
+      "senha": "123"
+    }
+  ]
 }

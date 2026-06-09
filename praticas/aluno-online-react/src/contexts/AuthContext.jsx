@@ -1,21 +1,41 @@
-/* eslint-disable react-refresh/only-export-components */
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [autenticado, setAutenticado] = useState(false);
   const [usuario, setUsuario] = useState(null);
+  const [carregando, setCarregando] = useState(true);
+  useEffect(() => {
+    const tokenSalvo = localStorage.getItem("token");
+    const usuarioSalvo = localStorage.getItem("usuario");
 
-  const login = (dadosUsuario) => {
+    if (tokenSalvo && usuarioSalvo) {
+      setAutenticado(true);
+      setUsuario(JSON.parse(usuarioSalvo));
+    }
+    setCarregando(false);
+  }, []);
+
+  const login = (dadosUsuario, token) => {
+    localStorage.setItem("token", token);
+    localStorage.setItem("usuario", JSON.stringify(dadosUsuario));
+    
     setAutenticado(true);
     setUsuario(dadosUsuario);
   };
 
   const logout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("usuario");
+    
     setAutenticado(false);
     setUsuario(null);
   };
+
+  if (carregando) {
+    return <div>Carregando sessão...</div>;
+  }
 
   return (
     <AuthContext.Provider value={{ autenticado, usuario, login, logout }}>
