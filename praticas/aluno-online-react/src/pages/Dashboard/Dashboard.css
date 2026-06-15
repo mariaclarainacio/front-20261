@@ -1,0 +1,15 @@
+.pagina-dashboard {
+  padding: 10px;
+}
+
+.dashboard-grid {
+  display: flex; 
+  gap: 20px; 
+  flex-wrap: wrap; 
+  margin-top: 20px;
+}
+
+.dashboard-grid .card-item {
+  flex: 1; 
+  min-width: 300px; 
+}
