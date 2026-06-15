@@ -1,0 +1,54 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "email": "aluno@iesb.br",
+      "senha": "123"
+    }
+  ],
+  "requerimentos": [
+    {
+      "id": "1",
+      "tipo": "Revisão de Menção",
+      "dataRequerimento": "15/12/2025",
+      "situacao": "Indeferido",
+      "descricao": "Solicito revisão."
+    },
+    {
+      "id": "2",
+      "tipo": "Dispensa de Disciplina",
+      "dataRequerimento": "12/06/2025",
+      "situacao": "Indeferido",
+      "descricao": "Solicito dispensa."
+    },
+    {
+      "id": "3",
+      "tipo": "Trancamento de Matrícula",
+      "dataRequerimento": "05/01/2024",
+      "situacao": "Deferido",
+      "descricao": "Solicito trancamento."
+    },
+    {
+      "id": "4",
+      "tipo": "Mudança de Turno",
+      "dataRequerimento": "10/10/2023",
+      "situacao": "Deferido",
+      "descricao": "Solicito mudança."
+    },
+    {
+      "id": "5",
+      "tipo": "Renovação de Matrícula",
+      "dataRequerimento": "20/02/2023",
+      "situacao": "Deferido",
+      "descricao": "Solicito renovação."
+    },
+    {
+      "tipo": "Dispensa de Disciplina",
+      "descricao": "dakopaakoadkoadkopakopdkopakopakopadkop",
+      "dataRequerimento": "15/06/2026",
+      "situacao": "Aguardando Análise",
+      "id": "cc2AsohbVNM"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
